@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>The Computer Guy — Computer Repair & IT Services</title>
     <meta name="description" content="Professional computer repair, custom builds, networking, and IT services. Fast, affordable, and reliable. Call The Computer Guy." />
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="The Computer Guy — Computer Repair & IT Services" />
+    <meta property="og:description" content="Repair, custom builds, networking, and software — done right, priced fair. Call (289) 904-2605." />
+    <meta property="og:image" content="https://thecomputerguy.vercel.app/og-image.png" />
+    <meta property="og:url" content="https://thecomputerguy.vercel.app" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Computer Guy — Computer Repair & IT Services" />
+    <meta name="twitter:description" content="Repair, custom builds, networking, and software — done right, priced fair." />
+    <meta name="twitter:image" content="https://thecomputerguy.vercel.app/og-image.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -385,11 +399,19 @@
 
       /* ── FOOTER ── */
       footer{
-        padding:2rem 1.5rem;text-align:center;
-        color:var(--text-dim);font-size:.8rem;
+        padding:2.5rem 1.5rem 1.5rem;text-align:center;
         border-top:1px solid var(--border);
         background:var(--maroon-deep);
       }
+      .footer-ig{margin-bottom:1.5rem}
+      .footer-ig-link{
+        display:inline-flex;align-items:center;gap:.6rem;
+        color:#e1306c;font-weight:600;font-size:1rem;text-decoration:none;
+        transition:opacity .2s;
+      }
+      .footer-ig-link:hover{opacity:.8}
+      .footer-ig-sub{font-size:.85rem;color:var(--text-dim);margin-top:.35rem}
+      .footer-copy{font-size:.8rem;color:var(--text-dim)}
 
       /* ── FADE IN ── */
       .fade-in{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
@@ -441,7 +463,7 @@
             <svg style="width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
             Instagram</a></li>
         </ul>
-        <a href="#contact" class="nav-cta desktop">Get Help Now</a>
+        <a href="#contact-form" class="nav-cta desktop">Get Help Now</a>
         <button class="hamburger" id="hamburger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
@@ -457,11 +479,11 @@
         <p>Repair, custom builds, networking, and software — done right, priced fair. No geek-speak, just solutions.</p>
         <div class="hero-buttons">
           <a href="#services" class="btn-primary">View Services & Prices</a>
-          <a href="#contact" class="btn-outline">Get in Touch</a>
+          <a href="#contact-form" class="btn-outline">Get in Touch</a>
         </div>
         <div class="stats-bar">
           <div class="stat">
-            <div class="stat-val">$20</div>
+            <div class="stat-val">$30</div>
             <div class="stat-label">Diagnostics</div>
           </div>
           <div class="stat">
@@ -501,7 +523,7 @@
             </div>
             <div class="price-row">
               <span class="price-label">Diagnostic &amp; recommendation</span>
-              <span class="price-value">$20</span>
+              <span class="price-value">$30</span>
             </div>
             <p class="price-note">Diagnostic fee waived if service is accepted</p>
           </div>
@@ -570,6 +592,10 @@
             </div>
             <div class="price-row">
               <span class="price-label">Malware &amp; glitch removal</span>
+              <span class="price-value">$100</span>
+            </div>
+            <div class="price-row">
+              <span class="price-label">Email &amp; account troubleshooting</span>
               <span class="price-value">$100</span>
             </div>
             <div class="price-row">
@@ -675,37 +701,14 @@
             <a href="tel:+12899042605" class="contact-card">
               <div class="contact-icon phone">📞</div>
               <div class="contact-info">
-                <div class="contact-label">Phone</div>
+                <div class="contact-label">Call Us</div>
                 <div class="contact-detail">(289) 904-2605</div>
               </div>
-            </a>
-            <a href="mailto:911.the.computer.guy@gmail.com" class="contact-card">
-              <div class="contact-icon email">✉️</div>
-              <div class="contact-info">
-                <div class="contact-label">Email</div>
-                <div class="contact-detail">911.the.computer.guy@gmail.com</div>
-              </div>
-            </a>
-            <a href="https://www.instagram.com/nscobee2k?igsh=MXh0MTgxNDdiY2Z4aw==" target="_blank" rel="noopener" class="contact-card">
-              <div class="contact-icon ig">
-                <svg class="ig-svg" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="#e1306c" stroke="none"/></svg>
-              </div>
-              <div class="contact-info">
-                <div class="contact-label">Instagram</div>
-                <div class="contact-detail">The Computer Guy</div>
-              </div>
-            </a>
-          </div>
-          <div class="ig-banner">
-            <p>Check out recent repairs &amp; builds on Instagram</p>
-            <a href="https://www.instagram.com/nscobee2k?igsh=MXh0MTgxNDdiY2Z4aw==" target="_blank" rel="noopener">
-              <svg style="width:18px;height:18px;fill:none;stroke:#e1306c;stroke-width:2;stroke-linecap:round;stroke-linejoin:round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="#e1306c" stroke="none"/></svg>
-              Follow The Computer Guy
             </a>
           </div>
 
           <!-- CONTACT FORM -->
-          <div class="form-wrapper fade-in">
+          <div class="form-wrapper fade-in" id="contact-form">
             <div id="formContent">
               <h3>Send a Message</h3>
               <p class="form-sub">Fill out the form and your email client will open with the message ready to send.</p>
@@ -746,7 +749,14 @@
 
     <!-- FOOTER -->
     <footer>
-      &copy; 2025 The Computer Guy. All rights reserved.
+      <div class="footer-ig">
+        <a href="https://www.instagram.com/nscobee2k?igsh=MXh0MTgxNDdiY2Z4aw==" target="_blank" rel="noopener" class="footer-ig-link">
+          <svg style="width:20px;height:20px;fill:none;stroke:#e1306c;stroke-width:2;stroke-linecap:round;stroke-linejoin:round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="#e1306c" stroke="none"/></svg>
+          <span>Follow The Computer Guy on Instagram</span>
+        </a>
+        <p class="footer-ig-sub">See our latest repairs &amp; builds</p>
+      </div>
+      <div class="footer-copy">&copy; 2025 The Computer Guy. All rights reserved.</div>
     </footer>
 
     <script>
