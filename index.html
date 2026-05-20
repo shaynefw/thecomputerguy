@@ -312,6 +312,25 @@
       }
       .contact-icon.phone{background:rgba(45,212,191,.1);border:1px solid rgba(45,212,191,.15)}
       .contact-icon.email{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.15)}
+      .contact-icon.ig{background:linear-gradient(135deg,rgba(131,58,180,.15),rgba(253,29,29,.15),rgba(252,176,69,.15));border:1px solid rgba(253,29,29,.15)}
+      .ig-svg{width:22px;height:22px;fill:none;stroke:#e1306c;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+      /* ── INSTAGRAM SECTION ── */
+      .ig-section{background:var(--navy);position:relative}
+      .ig-banner{
+        display:flex;align-items:center;justify-content:center;gap:1rem;
+        flex-wrap:wrap;margin-top:2rem;
+        padding:1.5rem 2rem;border-radius:14px;
+        background:linear-gradient(135deg,rgba(131,58,180,.08),rgba(253,29,29,.08),rgba(252,176,69,.08));
+        border:1px solid rgba(253,29,29,.12);
+      }
+      .ig-banner p{color:var(--text-muted);font-size:.95rem}
+      .ig-banner a{
+        display:inline-flex;align-items:center;gap:.5rem;
+        color:#e1306c;font-weight:600;font-size:.95rem;text-decoration:none;
+        transition:opacity .2s;
+      }
+      .ig-banner a:hover{opacity:.8}
       .contact-info{text-align:left}
       .contact-info .contact-label{font-size:.75rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.05em}
       .contact-info .contact-detail{font-size:.95rem;font-weight:600;margin-top:.15rem}
@@ -370,6 +389,9 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#why">Why Us</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="https://www.instagram.com/nscobee2k?igsh=MXh0MTgxNDdiY2Z4aw==" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.35rem">
+            <svg style="width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            Instagram</a></li>
         </ul>
         <a href="#contact" class="nav-cta desktop">Get Help Now</a>
         <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -602,12 +624,35 @@
           <h2>Let's fix it.</h2>
           <p>Reach out for a free consultation or to book a service call. Fast response, no pressure.</p>
           <div class="contact-cards">
+            <a href="tel:+12899042605" class="contact-card">
+              <div class="contact-icon phone">📞</div>
+              <div class="contact-info">
+                <div class="contact-label">Phone</div>
+                <div class="contact-detail">(289) 904-2605</div>
+              </div>
+            </a>
             <a href="mailto:911.the.computer.guy@gmail.com" class="contact-card">
               <div class="contact-icon email">✉️</div>
               <div class="contact-info">
                 <div class="contact-label">Email</div>
                 <div class="contact-detail">911.the.computer.guy@gmail.com</div>
               </div>
+            </a>
+            <a href="https://www.instagram.com/nscobee2k?igsh=MXh0MTgxNDdiY2Z4aw==" target="_blank" rel="noopener" class="contact-card">
+              <div class="contact-icon ig">
+                <svg class="ig-svg" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="#e1306c" stroke="none"/></svg>
+              </div>
+              <div class="contact-info">
+                <div class="contact-label">Instagram</div>
+                <div class="contact-detail">@nscobee2k</div>
+              </div>
+            </a>
+          </div>
+          <div class="ig-banner">
+            <p>Check out recent repairs &amp; builds on Instagram</p>
+            <a href="https://www.instagram.com/nscobee2k?igsh=MXh0MTgxNDdiY2Z4aw==" target="_blank" rel="noopener">
+              <svg style="width:18px;height:18px;fill:none;stroke:#e1306c;stroke-width:2;stroke-linecap:round;stroke-linejoin:round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="#e1306c" stroke="none"/></svg>
+              Follow @nscobee2k
             </a>
           </div>
         </div>
