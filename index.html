@@ -708,15 +708,9 @@
           <div class="form-wrapper fade-in">
             <div id="formContent">
               <h3>Send a Message</h3>
-              <p class="form-sub">Describe your issue and we'll get back to you ASAP.</p>
-              <form id="contactForm" action="https://formsubmit.co/911.the.computer.guy@gmail.com" method="POST">
-                <!-- Formsubmit config -->
-                <input type="hidden" name="_subject" value="New inquiry from The Computer Guy website" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_template" value="table" />
-                <input type="text" name="_honey" style="display:none" />
-                <input type="hidden" name="_next" value="https://thecomputerguy.vercel.app#contact" />
-
+              <p class="form-sub">Fill out the form and your email client will open with the message ready to send.</p>
+              <form id="contactForm">
+                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
                 <div class="form-grid">
                   <div class="form-row">
                     <label for="name">Name</label>
@@ -740,8 +734,10 @@
             </div>
             <div class="form-success" id="formSuccess">
               <div class="check">&#10003;</div>
-              <h3>Message Sent!</h3>
-              <p>Thanks for reaching out. We'll get back to you shortly.</p>
+              <h3>Almost there!</h3>
+              <p>Your email client should have opened with the message ready to go. Just hit <strong>Send</strong> in your email app.</p>
+              <p style="margin-top:.75rem;font-size:.85rem;color:var(--text-dim)">Didn't open? <a href="mailto:911.the.computer.guy@gmail.com" style="color:var(--teal)">Email us directly</a> or call <a href="tel:+12899042605" style="color:var(--teal)">(289) 904-2605</a></p>
+              <button onclick="document.getElementById('formSuccess').classList.remove('show');document.getElementById('formContent').style.display='block';document.getElementById('contactForm').reset();" style="margin-top:1rem;background:var(--surface-2);border:1px solid var(--border);color:var(--text);padding:.5rem 1.25rem;border-radius:8px;cursor:pointer;font-family:inherit;font-size:.85rem;font-weight:500">Send Another Message</button>
             </div>
           </div>
         </div>
@@ -776,6 +772,44 @@
         });
       }, { threshold: 0.08 });
       document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+      // Contact form → mailto
+      document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Honeypot check
+        if (this._honey && this._honey.value) return;
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const subject = document.getElementById('subject').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        const body = [
+          'Hi, I\'d like to inquire about a service.',
+          '',
+          '--- Details ---',
+          'Name: ' + name,
+          'Email: ' + email,
+          '',
+          message,
+          '',
+          '---',
+          'Sent from The Computer Guy website'
+        ].join('\n');
+
+        const mailto = 'mailto:911.the.computer.guy@gmail.com'
+          + '?subject=' + encodeURIComponent(subject)
+          + '&body=' + encodeURIComponent(body)
+          + '&cc=' + encodeURIComponent(email);
+
+        window.location.href = mailto;
+
+        // Show success state after a brief delay
+        setTimeout(function() {
+          document.getElementById('formContent').style.display = 'none';
+          document.getElementById('formSuccess').classList.add('show');
+        }, 500);
+      });
     </script>
   </body>
 </html>
