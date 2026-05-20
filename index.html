@@ -397,6 +397,25 @@
       .form-success h3{color:var(--teal);margin-bottom:.5rem}
       .form-success p{color:var(--text-muted);font-size:.95rem}
 
+      /* ── PAYMENT BAR ── */
+      .payment-bar{
+        padding:1.5rem;
+        background:var(--surface);
+        border-top:1px solid var(--border);
+        border-bottom:1px solid var(--border);
+      }
+      .payment-label{
+        font-size:.75rem;font-weight:600;color:var(--text-dim);
+        text-transform:uppercase;letter-spacing:.06em;
+      }
+      .payment-methods{display:flex;gap:.75rem;flex-wrap:wrap}
+      .payment-badge{
+        display:inline-flex;align-items:center;gap:.4rem;
+        padding:.5rem 1rem;border-radius:10px;
+        background:var(--surface-2);border:1px solid var(--border);
+        font-size:.9rem;font-weight:500;color:var(--text);
+      }
+
       /* ── FOOTER ── */
       footer{
         padding:2.5rem 1.5rem 1.5rem;text-align:center;
@@ -690,6 +709,17 @@
         </div>
       </div>
     </section>
+
+    <!-- PAYMENT METHODS -->
+    <div class="payment-bar">
+      <div class="container" style="display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap">
+        <span class="payment-label">Accepted Payment</span>
+        <div class="payment-methods">
+          <span class="payment-badge">💵 Cash</span>
+          <span class="payment-badge">📲 Interac e-Transfer</span>
+        </div>
+      </div>
+    </div>
 
     <!-- CONTACT -->
     <section id="contact" class="cta-section">
